@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bank</title>
+    <link rel="stylesheet" href="Css/all.css">
+    <!-- <link rel="stylesheet" href="Css/login.css"> -->
+    <link rel="stylesheet" href="Css/emicalculator.css">
+    <script>
+        function calLoanDuration(){
+            if(f.loanType.value == "Home"){
+                if(f.loanDuration.value>25){
+                    alert('loan durat should be less than 25');
+                    return false;
+                }
+                
+            }
+            if(f.loanType.value == "Car"){
+                if(f.loanDuration.value>7){
+                    alert('loan durat should be less than 7');
+                    return false;
+                }
+                
+            }
+            if(f.loanType.value == "Personal"){
+                if(f.loanDuration.value>5){
+                    alert('loan durat should be less than 5');
+                    return false;
+                }
+                
+            }
+            return true;
+        }
+        function calRateOfIntrest(){
+            if(f.loanType.value == "Car")
+                f.rateOfIntrest.value = 12;
+            if(f.loanType.value == "Home")
+                f.rateOfIntrest.value = 9;
+            if(f.loanType.value == "Personal")
+                f.rateOfIntrest.value = 7;
+            console.log(f.rateOfIntrest.value);
+        }
+        function calEmi(){
+            emi = (f.rateOfIntrest.value * f.loanAmount.value)/12;
+            f.Emi.value = emi;
+        }
+        function formSubmit(event){
+            if(calLoanDuration() == false){
+                return false;
+            }
+            calRateOfIntrest();
+            calEmi();
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <header><h1 class="header-title"><img src="Images/mybank.svg" alt="my bank icon" width="40">My Bank Pvt Ltd</h1></header>
+    
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="emicalculator.html">Emi Calculator</a></li>
+            <li><a href="#">Net Banking</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="index.html">Login</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <div class="main-div">
+            <div class="form">
+                <form onSubmit="return formSubmit()"  name="f">
+                    <label for="applicantName">Applicant Name :</label>
+                    <input type="text" id="applicantName" name="applicantName" placeholder="Enter Name" required><br>
+                    <label for="loanAmount" class="pass">Loan Amount :</label>
+                    <input type="number" id="loanAmount" name="loanAmount" placeholder="Enter Amount" required><br>
+                    <label for="loanType" class="pass">Loan Type :</label>
+                        <select name="loanType" onblur="calRateOfIntrest()" id="loanType">
+                            <option value="Personal">Personal</option>
+                            <option value="Home">Home</option>
+                            <option value="Car">Car</option>
+                        </select><br>
+                    <label for="loanDuration" class="pass">Loan Duration:</label>
+                    <input type="number" id="loanDuration" name="loanDuration" placeholder="No of Years" required>
+                    <br>
+                    <label for="rateOfIntrest" class="pass">ROI :</label>
+                    <input type="number" id="rateOfIntrest" name="rateOfIntrest" placeholder="" disabled><br>
+                    <label for="Emi" class="pass">EMI :</label>
+                    <input type="number" id="Emi" name="Emi" placeholder="" disabled><br>
+                    <div>
+                        <button type="submit" style="margin-top:0.3rem;display: inline-block;">Calculate</button>
+                        <button type="reset">Reset</button>
+                    </div>  
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="all-footer-links">
+            <div class="footer">
+                <h5>explore</h5>
+                <div>Investor Relations</div>
+                <div>Regulatory Disclosure Section</div>
+                <div>ICICI Bank Answers</div>
+                <div>Safe Banking</div>
+                <div>RBI Kehta Hai</div>
+                <div>RBI: Beware of Fictitious Offers</div>
+                <div>Money Transfer to India</div>
+                <div>Internet Banking</div>
+                <div>Mobile Banking</div>
+            </div>
+            <div class="footer">
+                <h5>popular products</h5>
+                <div>Savings Accounts</div>
+                <div>Women's Accounts</div>
+                <div>Senior Citizen Account</div>
+                <div>Current Accounts</div>
+                <div>Credit Cards</div>
+                <div>Home Loan</div>
+                <div>Personal Loan</div>
+                <div>Car Loan</div>
+                <div>Gold Loan</div>
+                <div>Fixed Deposit</div>
+                <div>Recurring Deposit</div>
+                <div>iWish Goal based savings</div>
+                <div>Life Insurance</div>
+                <div>General Insurance</div>
+            </div>
+            <div class="footer">
+                <h5>Calculators</h5>
+                <div>Personal Loan EMI Calculator</div>
+                <div>Car Loan EMI Calculator</div>
+                <div>Two Wheeler EMI Calculator</div>
+                <div>Two Wheeler EMI Calculator</div>
+                <div>Recurring Deposit EMI Calculator</div>
+                <div>Fixed Deposit EMI Calculator</div>
+                <div>More Calculators</div>
+            </div>
+            <div class="footer">
+                <h5>rates and charges</h5>
+                <div>Interest Ratesr</div>
+                <div>Gold Rate Today</div>
+                <div>Service Charges and Fees</div>
+                <h5 style="margin-top: 3rem;">social</h5>
+                <div>
+                    <span class="footer-icon"><a href="#"><img src="Images/facebook-icon.svg" width="30"></a></span>
+                    <span class="footer-icon"><a href="#"><img src="Images/linkedin-icon.svg" width="30"></a></span>
+                    <span class="footer-icon"><a href="#"><img src="Images/youtube-icon.svg" width="30"></a></span>
+                    <span class="footer-icon"><a href="#"><img src="Images/twitter-icon.svg" width="30"></a></span>
+                </div>
+                <div class="store">
+                    <span class="footer-store-img""><a href="#"></a><img src="Images/get-it-on-google-play-logo-svg-vector.svg"></a></span>
+                    <span class="footer-store-img"><a href="#"><img src="Images/available-app-store.png"></a></span>
+                </div>    
+            </div>
+        </div>
+        <hr class="less-width">
+        <div class="copywrite">
+            <div>Copyright© 2022 . All rights Reserved.</div>
+            <div>Made with <img src="Images/heart-icon.png" width="15" style="transform: translate(0,20%);"> by Shubham Tyagi</div>
+        </div>
+    </footer>
+
+</body>
+</html>

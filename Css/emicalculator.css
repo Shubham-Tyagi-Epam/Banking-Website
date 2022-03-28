@@ -1,0 +1,64 @@
+
+
+.main-div a{ 
+    text-decoration: none;
+    color: black;
+}
+
+input{
+    display: inline-block;
+    padding: 0.5rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 50%;
+    margin-left: auto;
+}
+.main-div{
+    margin:2rem 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.form{
+    border-radius: 25px;
+    background-color: #fff;
+    border:1px solid black;
+    padding: 4% 4%;
+    color: white;
+    background: linear-gradient(to bottom right, #c9593de5 0%,#EF4E29  100%);
+}
+
+.pass{
+    display: inline-block;
+    margin: 0rem;
+    padding: 0rem;
+    margin-top: 1.5rem;
+}
+
+
+button{
+    border-radius: 5px;
+    padding: 0.2rem 0.4rem;
+    background-color: white;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+h1{
+    margin: 0;
+}
+
+hr.less-width{
+    width: 95%;
+    margin:2rem auto;
+}
+
+form div{
+    margin-top: 1rem;
+}
+
